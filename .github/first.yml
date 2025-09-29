@@ -1,0 +1,10 @@
+name: wf
+on: push
+jobs:
+    fist_job:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: welcome
+          run: echo "welcome"
+        - name: list
+          run: ls
