@@ -12,3 +12,19 @@ jobs:
            echo "welcome"
            ls
            cat README.md
+    swt_job:
+        needs: fist_job
+        runs-on: ubuntu-latest
+        steps: 
+        - uses: actions/upload-artifact@v4
+          with:
+               name: my-artifact
+               path: path/to/artifact/world.txt
+        - name: checkoout
+          uses: actions/checkout@v5
+
+        - name: welcome
+          run: |
+           echo "welcome"
+           ls
+           cat README.md
