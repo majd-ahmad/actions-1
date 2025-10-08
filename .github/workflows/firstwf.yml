@@ -1,30 +1,10 @@
-name: wf
-on: [push]
+name: Actions Runner Controller Demo
+on:
+  workflow_dispatch:
+
 jobs:
-    fist_job:
-        runs-on: ubuntu-latest
-        steps: 
-        - name: checkoout
-          uses: actions/checkout@v5
-
-        - name: welcome
-          run: |
-           echo "welcome"
-           ls
-           cat README.md
-    swt_job:
-        needs: fist_job
-        runs-on: ubuntu-latest
-        steps: 
-        - uses: actions/upload-artifact@v4
-          with:
-               name: my-artifact
-               path: path/to/artifact/world.txt
-        - name: checkoout
-          uses: actions/checkout@v5
-
-        - name: welcome
-          run: |
-           echo "welcome"
-           ls
-           cat README.md
+  Explore-GitHub-Actions:
+    # You need to use the INSTALLATION_NAME from the previous step
+    runs-on: arc-runner-set
+    steps:
+    - run: echo "🎉 This job uses runner scale set runners!"
